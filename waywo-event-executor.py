@@ -7,11 +7,11 @@ import boto3
 
 CHECK_LAST_SECONDS = int(os.environ["CHECK_LAST_SECONDS"])
 EVENT_NAMESPACE = os.environ["EVENT_NAMESPACE"]
+TOPIC_ARN = os.environ["TOPIC_ARN"]
 
 DYNAMODB = boto3.client('dynamodb')
 SNS = boto3.client('sns')
 
-TOPIC_ARN = "arn:aws:sns:us-west-2:985967100294:waywo-sns-topic"
 
 def lambda_handler(event, context):
     event_time = datetime(
